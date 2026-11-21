@@ -27,12 +27,15 @@ export default {
 
     {
       pattern: 'request:send',
-      params: { url: 'http://not-a-host:41414/missing.json' },
+      // Nothing listens on port 1, so the connection is refused. A host
+      // name that does not resolve gives a different error code with each
+      // resolver.
+      params: { url: 'http://127.0.0.1:1/missing.json' },
       out: {
         ok: false,
         status: -1,
         err: {
-          code: 'ENOTFOUND'
+          code: 'ECONNREFUSED'
         }
       },
     },
