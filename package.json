@@ -1,6 +1,6 @@
 {
   "name": "@seneca/request",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "main": "dist/request.js",
   "type": "commonjs",
   "types": "dist/request.d.ts",
@@ -13,7 +13,7 @@
   "author": "Richard Rodger - richardrodger.com",
   "repository": {
     "type": "git",
-    "url": "git://github.com/senecajs/seneca-request.git"
+    "url": "git+https://github.com/senecajs/seneca-request.git"
   },
   "scripts": {
     "test": "jest --coverage",
@@ -32,26 +32,32 @@
   "files": [
     "dist",
     "src/**/*.ts",
-    "LICENSE"
+    "LICENSE",
+    "README.md",
+    "CHANGES.md"
   ],
   "devDependencies": {
-    "@seneca/doc": "^4.1.0",
+    "@seneca/doc": "^9.0.0",
     "@types/jest": "^29.2.6",
     "@types/node": "^18.11.18",
     "esbuild": "^0.17.3",
     "esbuild-jest": "^0.5.0",
     "jest": "^29.3.1",
-    "seneca": ">=3",
-    "seneca-msg-test": "^3.4.0",
-    "seneca-promisify": ">=3",
-    "serve": "^14.1.2",
+    "seneca": "^4.0.0",
+    "seneca-msg-test": "^5.0.0",
+    "serve-handler": "^6.1.6",
     "typescript": "^4.9.4"
   },
   "peerDependencies": {
-    "seneca": ">=3",
-    "seneca-promisify": ">=3"
+    "seneca": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=24"
   },
   "dependencies": {
     "node-fetch": "^2.6.7"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

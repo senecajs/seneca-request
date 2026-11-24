@@ -18,7 +18,6 @@ server.listen(port, function(err) {
 
   const seneca = Seneca({ legacy: false })
         .test()
-        .use('promisify')
         .use(request)
 
   seneca.ready(function() {

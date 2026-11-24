@@ -16,8 +16,11 @@
 ## Install
 
 ```sh
-$ npm install @seneca/request
+$ npm install seneca@^4 @seneca/request
 ```
+
+Requires Node.js 24 or later and Seneca 4. Seneca 3 users stay on
+`@seneca/request@0.4`.
 
 
 

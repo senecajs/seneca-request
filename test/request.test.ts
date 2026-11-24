@@ -37,7 +37,6 @@ describe('request', () => {
   test('happy', async () => {
     const seneca = Seneca({ legacy: false })
       .test()
-      .use('promisify')
       .use(request)
     await seneca.ready()
     expect(requestDoc).toBeDefined()
@@ -47,7 +46,6 @@ describe('request', () => {
   test('messages', async () => {
     const seneca = Seneca({ legacy: false })
       .test()
-      .use('promisify')
       .use(request)
     await (SenecaMsgTest(seneca, RequestMessages)())
   })
@@ -56,7 +54,6 @@ describe('request', () => {
   test('later', (fin) => {
     Seneca({ legacy: false })
       .test()
-      .use('promisify')
       .use(request)
       .sub('sys:request,response:handle', function(out: any) {
         expect(out).toMatchObject({
@@ -105,7 +102,6 @@ describe('request', () => {
     let res = {}
     Seneca({ legacy: false })
       .test()
-      .use('promisify')
       .use(request)
       .sub('sys:request,response:handle', function(out: any) {
         res[out.spread.item] = out
